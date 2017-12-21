@@ -18,7 +18,9 @@ angular.module('HelloWorldApp', [])
 		  <h2>Fifa18 - Player Predictor</h2>
 		
 		<!-- Players filter -->
-		<input type="text" placeholder="search players..." ng-model="ctrl.searchTerm"></imput>
+		<div class="form-group">
+		  <input type="text" class="form-control" type="text" placeholder="search..." ng-model="ctrl.searchTerm">
+		</div>
 		
 		<!-- Players Table --> 
 		  <table class="table table-striped">
