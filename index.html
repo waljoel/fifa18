@@ -15,35 +15,38 @@ angular.module('HelloWorldApp', [])
 <body>
 	<div class="container" ng-app='HelloWorldApp'>	
 		<div ng-controller='HelloWorldController as ctrl'>
-		
-		<!-- Players filter -->
-		<div class="form-group">
-		  <input type="text" class="form-control" type="text" placeholder="search..." ng-model="ctrl.searchTerm">
-		</div>
-		
-		<!-- Players Table --> 
-		  <table class="table table-striped">
-		    <thead>
-		      <tr>
-			<th>Photo</th>
-			<th>Name</th>
-			<th>Value</th>
-			<th>Overall</th>
-			<th>Overall Prediction</th>			      
-			<th>% Error</th>			      
-		      </tr>
-		    </thead>
-		    <tbody>
-		      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchTerm }">
-			<td><img ng-src="{{p.Photo}}" /></td>
-			<td>{{p.Name}}</td>
-			<td>€ 190000000</td>
-			<td>93</td>
-			<td>91</td>
-			<td>1.3 %</td>
-		      </tr>
-		    </tbody>
-		  </table>
+			
+			<!-- Players filter -->
+			<div class="form-group">
+			  <input type="text" class="form-control" type="text" placeholder="search..." ng-model="ctrl.searchTerm">
+			</div>
+
+			<!-- Players Table --> 
+			<div style="height: 300px; overflow-y: scroll;">
+				  <table class="table table-striped">
+				    <thead>
+				      <tr>
+					<th>Photo</th>
+					<th>Name</th>
+					<th>Value</th>
+					<th>Overall</th>
+					<th>Overall Prediction</th>			      
+					<th>% Error</th>			      
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchTerm }">
+					<td><img ng-src="{{p.Photo}}" /></td>
+					<td>{{p.Name}}</td>
+					<td>€ 190000000</td>
+					<td>93</td>
+					<td>91</td>
+					<td>1.3 %</td>
+				      </tr>
+				    </tbody>
+				  </table>
+			</div>
+			
 		</div>
 	</div>
 </body>
