@@ -8,7 +8,17 @@ angular.module('HelloWorldApp', [])
    .controller('HelloWorldController', function($scope) {
        	vm = this;
 	vm.players =  players; 
-	vm.searchTerm = "";
+	vm.searchText = "";
+	vm.searchFilter = "";
+	
+	vm.change = function()
+	{
+		if(vm.searchText.length > 3)
+			vm.searchFilter = searchText;
+		else
+			vm.searchFilter = ""
+		
+	}
 });
 </script>
 </head>
@@ -18,7 +28,8 @@ angular.module('HelloWorldApp', [])
 			
 			<!-- Players filter -->
 			<div class="form-group">
-			  <input type="text" class="form-control" type="text" placeholder="search..." ng-model="ctrl.searchTerm">
+			  <input type="text" class="form-control" type="text"  ng-model="ctrl.searchText" ng-change="ctrl.change()">
+   			  <input type="button" value="search"></input>
 			</div>
 
 			<!-- Players Table --> 
@@ -35,7 +46,7 @@ angular.module('HelloWorldApp', [])
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchTerm }">
+				      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchFilter }">
 					<td><img ng-src="{{p.Photo}}" /></td>
 					<td>{{p.Name}}</td>
 					<td>€ 190000000</td>
