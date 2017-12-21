@@ -1,0 +1,19 @@
+<html>
+<head>
+<script src='angular.min.js'></script>
+<script>
+angular.module('HelloWorldApp', [])
+   .controller('HelloWorldController', function($scope) {
+       vm = this;
+       vm.player = {name: 'Player Name', age: '30'};
+});
+</script>
+</head>
+<body>
+	<div ng-app='HelloWorldApp'>
+		<div ng-controller='HelloWorldController as ctrl'>
+			<h1>{{ctrl.player.name}}</h1>
+		</div>
+	</div>
+</body>
+</html>
