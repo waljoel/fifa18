@@ -27,12 +27,18 @@ angular.module('HelloWorldApp', [])
 		      <tr>
 			<th>Photo</th>
 			<th>Name</th>
+			<th>Value</th>
+			<th>Overall</th>
+			<th>Overall Prediction</th>			      
 		      </tr>
 		    </thead>
 		    <tbody>
 		      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchTerm }">
 			<td><img ng-src="{{p.Photo}}" /></td>
 			<td>{{p.Name}}</td>
+			<td>€ 190000000</td>
+			<td>93</td>
+			<td>91</td>
 		      </tr>
 		    </tbody>
 		  </table>
