@@ -29,7 +29,7 @@ angular.module('HelloWorldApp', [])
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <tr ng-repeat="p in ctrl.players | filter:ctrl.searchTerm">
+		      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchTerm }">
 			<td><img ng-src="{{p.Photo}}" /></td>
 			<td>{{p.Name}}</td>
 		      </tr>
