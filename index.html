@@ -6,8 +6,9 @@
 <script>
 angular.module('HelloWorldApp', [])
    .controller('HelloWorldController', function($scope) {
-       vm = this;
+       	vm = this;
 	vm.players =  players; 
+	vm.searchTerm = "";
 });
 </script>
 </head>
@@ -15,7 +16,11 @@ angular.module('HelloWorldApp', [])
 	<div class="container" ng-app='HelloWorldApp'>	
 		<div ng-controller='HelloWorldController as ctrl'>
 		  <h2>Fifa18 - Player Predictor</h2>
-		  <p>Some players:</p>            
+		
+		<!-- Players filter -->
+		<input type="text" placeholder="search players..." ng-model="ctrl.searchTerm"></imput>
+		
+		<!-- Players Table --> 
 		  <table class="table table-striped">
 		    <thead>
 		      <tr>
@@ -24,7 +29,7 @@ angular.module('HelloWorldApp', [])
 		      </tr>
 		    </thead>
 		    <tbody>
-		      <tr ng-repeat="p in ctrl.players">
+		      <tr ng-repeat="p in ctrl.players | filter:ctrl.searchTerm">
 			<td><img ng-src="{{p.Photo}}" /></td>
 			<td>{{p.Name}}</td>
 		      </tr>
