@@ -19,13 +19,18 @@ angular.module('HelloWorldApp', [])
 			
 			<!-- Players filter -->
 			<div class="form-group">
-				<!-- search text -->
-				  <input type="text" class="form-control" type="text"  ng-model="ctrl.tempSearchText" />
-			    	
-				<!-- search button -->
-				<button type="button" class="btn btn-info" ng-click="ctrl.searchText = ctrl.tempSearchText">
-			      		<span class="glyphicon glyphicon-search"></span> Search
-			    	</button>			
+				<div class="input-group input-group-lg">
+					<!-- search text -->
+				    <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>					
+				    <div class="icon-addon addon-lg">
+					<input type="text" placeholder="Search" class="form-control" ng-model="ctrl.tempSearchText">
+					<label class="glyphicon glyphicon-search" rel="tooltip" title="player"></label>
+				    </div>
+					<!-- search button -->
+				    <span class="input-group-btn">
+					<button class="btn btn-default" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
+				    </span>
+				</div>	
 			</div>
 
 			<!-- Players Table --> 
