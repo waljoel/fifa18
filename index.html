@@ -8,8 +8,8 @@ angular.module('HelloWorldApp', [])
    .controller('HelloWorldController', function($scope) {
        	vm = this;
 	vm.players =  players; 
-	vm.tempSearchText = "";
-	vm.searchText = "qwerty";	
+	vm.tempSearchText = "Suárez";
+	vm.searchText = "Suárez";	
 });
 </script>
 </head>
@@ -18,19 +18,15 @@ angular.module('HelloWorldApp', [])
 		<div ng-controller='HelloWorldController as ctrl'>
 			
 			<!-- Players filter -->
-			<div class="form-group">
-				<div class="input-group input-group-lg">
-					<!-- search text -->
-				    <span class="input-group-addon"><i class="glyphicon glyphicon-filter"></i></span>					
-				    <div class="icon-addon addon-lg">
-					<input type="text" placeholder="Search" class="form-control" ng-model="ctrl.tempSearchText" id="player" />
-					<label for="player" class="glyphicon glyphicon-search" rel="tooltip" title="player"></label>
+			<div class="row">				
+				<div class="col-lg-6">
+				    <div class="input-group">
+				      <input type="text" class="form-control" ng-model="ctrl.tempSearchText" placeholder="Search">
+				      <span class="input-group-btn">
+					<button class="btn btn-secondary" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
+				      </span>
 				    </div>
-					<!-- search button -->
-				    <span class="input-group-btn">
-					<button class="btn btn-default" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
-				    </span>
-				</div>	
+				 </div>		
 			</div>
 
 			<!-- Players Table --> 
