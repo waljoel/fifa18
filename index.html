@@ -47,7 +47,6 @@ angular.module('Fifa18App', [])
 					<th></th>
 					<th>Name</th>
 					<th>Age</th>
-					<th>Acceleration</th>
 					<th>Finishing</th>
 					<th>Value (€)</th>
 					<th>Overall</th>
@@ -60,12 +59,11 @@ angular.module('Fifa18App', [])
 					<td><img ng-src="{{p.Photo}}" /></td>
 					<td>{{p.Name}}</td>
 					<td>{{p.Age}}</td>
-					<td>{{p.Acceleration}}</td>
-					<td>{{p.Finishing}}</td>					      
+					<td>€ {{p.Finishing}}</td>					      
 					<td>{{p.Value}}</td>
 					<td>{{p.Overall}}</td>
 					<td>{{p.Overall_Prediction_RBF}}</td>
-					<td>{{p.Error_Percentage}}</td>
+					<td>{{p.Error_Percentage}} %</td>
 				      </tr>
 				    </tbody>
 				  </table>
