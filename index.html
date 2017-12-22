@@ -44,7 +44,7 @@ angular.module('HelloWorldApp', [])
 				      <tr ng-repeat="p in ctrl.players | filter:{ Name: ctrl.searchText } | orderBy:'Name'">
 					<td><img ng-src="{{p.Photo}}" /></td>
 					<td>{{p.Name}}</td>
-					<td>€ {{p.value}}</td>
+					<td>€ {{p.Value}}</td>
 					<td>{{p.Overall}}</td>
 					<td>{{p.Overall_Prediction_RBF}}</td>
 					<td>{{p.Error_Percentage}} %</td>
