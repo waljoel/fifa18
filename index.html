@@ -19,18 +19,16 @@ angular.module('HelloWorldApp', [])
 			
 			<!-- Players filter -->
 			<div class="row">				
-				<div class="col-lg-6">
-				    <div class="input-group">
-				      <input type="text" class="form-control" ng-model="ctrl.tempSearchText" placeholder="Search">
-				      <span class="input-group-btn">
-					<button class="btn btn-secondary" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
-				      </span>
-				    </div>
-				 </div>		
+			    <div class="input-group">
+			      <input type="text" class="form-control" ng-model="ctrl.tempSearchText" placeholder="Search">
+			      <span class="input-group-btn">
+				<button class="btn btn-secondary" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
+			      </span>
+			    </div>
 			</div>
 
 			<!-- Players Table --> 
-			<div style="height: 300px; overflow-y: scroll;">
+			<div style="height: 500px; overflow-y: scroll;">
 				  <table class="table table-striped">
 				    <thead>
 				      <tr>
