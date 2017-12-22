@@ -10,6 +10,18 @@ angular.module('HelloWorldApp', [])
 	vm.players =  players; 
 	vm.tempSearchText = "Suárez";
 	vm.searchText = "Suárez";	
+
+	vm.search()
+	{
+	  vm.searchText = vm.tempSearchText;
+	}
+
+	vm.keypress(keyEvent)
+	{
+	  if (keyEvent.which === 13)
+		  vm.search();
+	}
+	
 });
 </script>
 </head>
@@ -20,9 +32,9 @@ angular.module('HelloWorldApp', [])
 			<!-- Players filter -->
 			<div class="row" style="padding-bottom: 25px;">				
 			    <div class="input-group">
-			      <input type="text" class="form-control" ng-model="ctrl.tempSearchText" placeholder="Search">
+			      <input type="text" class="form-control" ng-model="ctrl.tempSearchText" placeholder="Search" ng-keypress="ctrl.keypress($event)">
 			      <span class="input-group-btn">
-				<button class="btn btn-secondary" type="button" ng-click="ctrl.searchText = ctrl.tempSearchText">Go!</button>
+				<button class="btn btn-secondary" type="button" ng-click="ctrl.search()>Go!</button>
 			      </span>
 			    </div>
 			</div>
