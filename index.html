@@ -11,12 +11,12 @@ angular.module('HelloWorldApp', [])
 	vm.tempSearchText = "Suárez";
 	vm.searchText = "Suárez";	
 
-	vm.search()
+	vm.search = function()
 	{
 	  vm.searchText = vm.tempSearchText;
 	}
 
-	vm.keypress(keyEvent)
+	vm.keypress = function(keyEvent)
 	{
 	  if (keyEvent.which === 13)
 		  vm.search();
