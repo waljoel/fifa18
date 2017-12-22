@@ -4,8 +4,8 @@
 <script src='angular.min.js'></script>
 <script src='players18.js'></script>
 <script>
-angular.module('HelloWorldApp', [])
-   .controller('HelloWorldController', function($scope) {
+angular.module('Fifa18App', [])
+   .controller('Fifa18Controller', function($scope) {
        	vm = this;
 	vm.players =  players; 
 	vm.tempSearchText = "Suárez";
@@ -26,8 +26,8 @@ angular.module('HelloWorldApp', [])
 </script>
 </head>
 <body>
-	<div class="container" ng-app='HelloWorldApp'>	
-		<div ng-controller='HelloWorldController as ctrl'>
+	<div class="container" ng-app='Fifa18App'>	
+		<div ng-controller='Fifa18Controller as ctrl'>
 			
 			<!-- Players filter -->
 			<div class="row" style="padding-bottom: 25px;">				
